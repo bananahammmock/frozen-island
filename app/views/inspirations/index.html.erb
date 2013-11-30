@@ -1,0 +1,9 @@
+<% @inspirations.each do |i| %>
+<% if i.theme != nil %>
+Theme: <%= i.theme.name %><br>
+<%= i.quote %>
+<% else %>
+<%= i.quote %>
+<% end %>
+<p>
+<% end %>

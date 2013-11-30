@@ -1,0 +1,10 @@
+<%= form_for @user do |u|%>
+	<br>
+  	<%= u.label :email %>
+  	<%= u.text_field :email %>
+  	<br>
+	<%= u.label :phone_number %>
+ 	 <%= u.text_field :phone_number %>
+  	<br>
+  	<%= u.submit "Update" %>
+<% end %>

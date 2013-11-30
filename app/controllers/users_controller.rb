@@ -1,10 +1,12 @@
 class UsersController < ApplicationController
 	def index
 		@user = current_user
-		
-		
+		@themes = Theme.all
 	end
 
+	def show
+		@user = current_user
+	end
 	def update
 		@user = current_user
 		@user.update(user_params)

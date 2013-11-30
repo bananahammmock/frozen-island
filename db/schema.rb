@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127074746) do
+ActiveRecord::Schema.define(version: 20131130054856) do
+
+  create_table "inspirations", force: true do |t|
+    t.text     "quote"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "author"
+    t.integer  "theme_id"
+  end
+
+  create_table "subscriptions", force: true do |t|
+    t.integer  "inspiration_id"
+    t.integer  "theme_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "themes", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"

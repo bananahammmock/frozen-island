@@ -1,14 +1,10 @@
 <% if current_user %>
-	<%= form_for @user do |u|%>
+	<%= link_to "Update Info", "/users/update" %>
+	<h1>Themes, Yo.</h1>
+	<% @themes.each do |t| %>
+	<%= link_to t.name, t %>
 	<br>
-  	<%= u.label :email %>
-  	<%= u.text_field :email %>
-  	<br>
-	<%= u.label :phone_number %>
- 	 <%= u.text_field :phone_number %>
-  	<br>
-  	<%= u.submit %>
-	<% end %>
+<% end %>
 <% else %>
 	<h1>Welcome to FUTW</h1>
 <% end %>
