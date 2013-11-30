@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 	def index
 		@user = current_user
 		@themes = Theme.all
+		@s = current_user.themes
 	end
 
 	def show

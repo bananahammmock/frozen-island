@@ -1,10 +1,20 @@
 <% if current_user %>
 	<%= link_to "Update Info", "/users/update" %>
+	<br>
+	<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  	<% end %>
+  	<%= @s.count %>
+	<br>
+	<img src ="http://media3.giphy.com/media/oy0ksrGIrPHUI/giphy.gif">
+	<br>
 	<h1>Themes, Yo.</h1>
 	<% @themes.each do |t| %>
-	<%= link_to t.name, t %>
+	<%= link_to t.name, t %> 
 	<br>
 <% end %>
 <% else %>
 	<h1>Welcome to FUTW</h1>
+	<br>
+	<img src ="http://media3.giphy.com/media/oy0ksrGIrPHUI/giphy.gif">
 <% end %>
