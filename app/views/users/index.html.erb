@@ -4,15 +4,21 @@
 	<% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   	<% end %>
-  	<%= @s.count %>
+  	<%= "You have #{@user_themes_array.count} subscriptions" %>
 	<br>
 	<img src ="http://media3.giphy.com/media/oy0ksrGIrPHUI/giphy.gif">
 	<br>
 	<h1>Themes, Yo.</h1>
 	<% @themes.each do |t| %>
 	<%= link_to t.name, t %> 
+	<% end %>
 	<br>
-<% end %>
+	<h2>Rando Quotes From mah Subcriptions</h2>
+	<% @user_themes_array.each do |user_theme| %>
+		<small><%= user_theme.name %></small><p>
+		<h3><%= user_theme.inspirations.shuffle.first.quote %></h3>
+		<br>	
+	<% end %>
 <% else %>
 	<h1>Welcome to FUTW</h1>
 	<br>

@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
 	def index
+		if current_user
 		@user = current_user
 		@themes = Theme.all
-		@s = current_user.themes
+		@user_themes_array = current_user.themes
+		# @user_quotes = @user_themes.each.inspirations
+		end
 	end
 
 	def show

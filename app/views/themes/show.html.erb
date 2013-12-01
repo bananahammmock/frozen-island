@@ -1,16 +1,38 @@
 <h1>QUOTES, YO.</h1>
 <br>
+<% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  	<% end %>
+<br>
+<% if @theme.id == 6 %>
+	<% if @current_subs.count == 0 %>
+		<%= link_to "Subscribe!", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id, data: { confirm: 'Are you sure you want to subscribe?' } )%>
+	<% else %>
+		<%= button_to "UnSubscribe!", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, data: { confirm: 'Are you sure you want to unsubscribe?' } %>
+	<% end %>
+	<br>
+	<br>
+		<% @bob.each do |b| %>
+			<%= b.quote %>
+		<small><%= link_to "Add to Custom Subscription", new_inspiration_path(@insp) %></small>
+		<br>
+		<% end %>
+		<br>
+		<br>
+blargh
+<% else %>
 <h3>
 <% if @current_subs.count == 0 %>
-<%= link_to "Subscribe!", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id, data: { confirm: 'Are you sure you want to subscribe?' } )%>
+	<%= link_to "Subscribe!", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id, data: { confirm: 'Are you sure you want to subscribe?' } )%>
 <% else %>
-<%= button_to "UnSubscribe!", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, data: { confirm: 'Are you sure you want to unsubscribe?' } %>
+	<%= button_to "UnSubscribe!", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, data: { confirm: 'Are you sure you want to unsubscribe?' } %>
 <% end %>
 </h3>
 <br>
 <% @theme.inspirations.each do |i| %>
 	<%= i.quote %>
 	<br>
+<% end %>
 <% end %>
 <br>
 <%= link_to "Back to Main", root_path %>
