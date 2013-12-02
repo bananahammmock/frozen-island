@@ -8,7 +8,7 @@ class InspirationsController <ApplicationController
 			@bobby = b
 		end
 		@insp = Inspiration.new
-		@insp.quote = "lolololol"
+		@insp.quote = @bob
 		@insp.theme_id = 6
 		@insp.save!
 		flash[:notice] = "You have added #{@insp.quote}"

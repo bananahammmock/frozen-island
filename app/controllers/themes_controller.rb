@@ -9,7 +9,6 @@ class ThemesController < ApplicationController
 			@bobby = b
 		end
 		@current_subs = Subscription.where(:user_id => current_user.id, :theme_id => @theme.id)
-		
 	end
 
 private
