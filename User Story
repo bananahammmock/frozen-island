@@ -1,1 +1,13 @@
-user stories
+Models
+User
+	:name
+	:email
+	:phone_number
+
+User roots to main page
+	Main Page
+		presents all themes to subscribe to
+	if user is not signed in, clicking themes prompts them to user sign in/register
+	User is then directed back to main page where they can click each theme to subscribe
+	Choose whether to subcribe with email/text/both
+		select time frame of sent quotes

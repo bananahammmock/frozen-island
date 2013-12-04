@@ -14,7 +14,7 @@
 	<br>
 		<% @bob.each do |b| %>
 			<%= b.quote %>
-		<small><%= link_to "Add to Custom Subscription", new_inspiration_path(@insp) %></small>
+		<small><%= link_to "Add to Custom Subscription", new_inspiration_path(:quote => b.quote) %></small>
 		<br>
 		<% end %>
 		<br>
