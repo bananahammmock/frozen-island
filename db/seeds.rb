@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
 Inspiration.create(quote: "Keep love in your heart. A life without it is like a sunless garden when the flowers are dead.", author: "Oscar Wilde", theme: "Love", theme_id: 1)
 Inspiration.create(quote: "Being deeply loved by someone gives you strength, while loving someone deeply gives you courage.", author: "Lao Tzu", theme: "Love", theme_id: 1)
 Inspiration.create(quote: "Love is composed of a single soul inhabiting two bodies.", author: "Aristotle", theme: "Love", theme_id: 1)
@@ -15,17 +8,17 @@ Inspiration.create(quote: "For it was not into my ear you whispered, but into my
 Inspiration.create(quote: "I was born with an enormous need for affection, and a terrible need to give it.", author: "Audrey Hepburn", theme: "Love", theme_id: 1)
 Inspiration.create(quote: "At the touch of love everyone becomes a poet.", author: "Plato", theme: "Love", theme_id: 1)
 Inspiration.create(quote: "Love makes your soul crawl out from its hiding place.", author: "Zora Neale Hurston", theme: "Love", theme_id: 1)
-"Inspiration.create(quote: ""Take care of your body. It's the only place you have to live.
-"", author: ""Jim Rohn"", theme: ""Fitness"", theme_id: 2)"
+Inspiration.create(quote: "Take care of your body. It's the only place you have to live.
+", author: "Jim Rohn", theme: "Fitness", theme_id: 2)
 Inspiration.create(quote: "Exercise to stimulate, not to annihilate. The world wasn't formed in a day, and neither were we. Set small goals and build upon them.", author: "Lee Haney", theme: "Fitness", theme_id: 2)
 Inspiration.create(quote: "Unless you puke, faint, or die, keep going.", author: "Jillian Michaels", theme: "Fitness", theme_id: 2)
 Inspiration.create(quote: "Your body is the church where Nature asks to be reverenced.", author: "Marquis de Sade", theme: "Fitness", theme_id: 2)
 Inspiration.create(quote: "Health is the thing that makes you feel that now is the best time of the year.", author: "Franklin P. Adams", theme: "Fitness", theme_id: 2)
 Inspiration.create(quote: "Exercise should be regarded as tribute to the heart.", author: "Gene Tunnel", theme: "Fitness", theme_id: 2)
 Inspiration.create(quote: "Never give up on a dream just because of the time it will take to accomplish it. The time will pass anyway.", author: "Earl Nightingale", theme: "Fitness", theme_id: 2)
-Inspiration.create(quote: "When you feel like quitting, think about why you started.", author: "", theme: "Fitness", theme_id: 2)
-Inspiration.create(quote: "Don’t wish for it, work for it.", author: "", theme: "Fitness", theme_id: 2)
-Inspiration.create(quote: "Rather than aiming for being perfect, aim for being better than you were yesterday.", author: "", theme: "Fitness", theme_id: 2)
+Inspiration.create(quote: "When you feel like quitting, think about why you started.", author: "nil", theme: "Fitness", theme_id: 2)
+Inspiration.create(quote: "Don’t wish for it, work for it.", author: "nil", theme: "Fitness", theme_id: 2)
+Inspiration.create(quote: "Rather than aiming for being perfect, aim for being better than you were yesterday.", author: "nil", theme: "Fitness", theme_id: 2)
 Inspiration.create(quote: "If you're going through hell, keep going.", author: "Winston Churchill", theme: "Motivational", theme_id: 3)
 Inspiration.create(quote: "Even if you fall on your face, you're still moving forward.", author: "Victor Kiam", theme: "Motivational", theme_id: 3)
 Inspiration.create(quote: "Who seeks shall find.", author: "Sophocles", theme: "Motivational", theme_id: 3)
@@ -48,7 +41,7 @@ Inspiration.create(quote: "Entrepreneurship is living a few years of your life l
 Inspiration.create(quote: "Failure defeats losers, failure inspires winners.", author: "Robert T. Kiyosaki", theme: "Entrepreneurship", theme_id: 4)
 Inspiration.create(quote: "Happiness is when what you think, what you say, and what you do are in harmony.", author: "Mahatma Gandhi", theme: "Happiness", theme_id: 5)
 Inspiration.create(quote: "Don't wait around for other people to be happy for you. Any happiness you get you've got to make yourself.", author: "Alice Walker", theme: "Happiness", theme_id: 5)
-Inspiration.create(quote: "Never let a bad day make you feel like you have a bad life.", author: "", theme: "Happiness", theme_id: 5)
+Inspiration.create(quote: "Never let a bad day make you feel like you have a bad life.", author: "nil", theme: "Happiness", theme_id: 5)
 Inspiration.create(quote: "Happiness is not something you postpone for the future; it is somethingyou design into the present.", author: "", theme: "Happiness", theme_id: 5)
 Inspiration.create(quote: "Each morning when I open my eyes I say to myself: I, not events, have the power to make me happy or unhappy today. I can choose which it shall be. Yesterday is dead, tomorrow hasn't arrived yet. I have just one day, today, and I'm going to be happy in it.", author: "Groucho Marx", theme: "Happiness", theme_id: 5)
 Inspiration.create(quote: "To be happy, we must not be too concerned with others.", author: "Albert Camus", theme: "Happiness", theme_id: 5)
@@ -56,4 +49,3 @@ Inspiration.create(quote: "When one door of happiness closes, another opens, but
 Inspiration.create(quote: "Learn to let go. That is the key to happiness.", author: "Buddha", theme: "Happiness", theme_id: 5)
 Inspiration.create(quote: "Worry never robs tomorrow of its sorrow. It only saps today of its joy.", author: "Leo Buscaglia", theme: "Happiness", theme_id: 5)
 Inspiration.create(quote: "Life will bring you pain all by itself. Your responsibility is to create joy.", author: "Milton Erickson", theme: "Happiness", theme_id: 5)
-puts "SEED FILE SUCCESSFULLY RAKED MOFO."
