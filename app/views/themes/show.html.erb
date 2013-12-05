@@ -12,6 +12,12 @@
 	<% end %>
 	<br>
 	<br>
+	<h2>Added Quotes</h2>
+	<% @theme.inspirations.each do |i| %>
+		<%= i.quote %>
+		<br>
+	<% end %>
+	<h2>All Quotes</h2>
 		<% @bob.each do |b| %>
 			<%= b.quote %>
 		<small><%= link_to "Add to Custom Subscription", new_inspiration_path(:quote => b.quote) %></small>
