@@ -2,23 +2,28 @@
 <html>
 <head>
   <title>Futw</title>
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
  
 </head>
 <body>
-    
+<div class ="navbar navbar-default navbar-fixed-top" role="navigation">
 <div id="user_nav">
-  <% if current_user %>
-     <%= image_tag current_user.image %><%= current_user.email %><strong><%= current_user.name %></strong><%= current_user.phone_number %>
-    <br>
-    <small><%= link_to "Sign out", signout_path, id: "sign_out" %></small>
-  <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-  <% end %>
+    <% if current_user %>
+      <strong><%= current_user.name %></strong>
+      <br>
+      <small><%= link_to "Update Info", "/users/update" %>
+      <br>
+      <%= link_to "Sign out", signout_path, id: "sign_out" %></small>
+    <% else %>
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <% end %>
+  </div>
 </div>
-<%= yield %>
 
+<div class="container">
+  <%= yield %>
+</div>
 </body>
 </html>

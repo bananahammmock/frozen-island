@@ -1,4 +1,5 @@
-<%= form_for @user do |u|%>
+<%= image_tag current_user.image %>
+<%= simple_form_for @user do |u|%>
 	<br>
   	<%= u.label :email %>
   	<%= u.text_field :email %>

@@ -1,6 +1,4 @@
 <% if current_user %>
-	<%= link_to "Update Info", "/users/update" %>
-	<br>
 	<% if flash[:notice] %>
     <div class="notice"><%= flash[:notice] %></div>
   	<% end %>
@@ -9,9 +7,11 @@
 	<img src ="http://media3.giphy.com/media/oy0ksrGIrPHUI/giphy.gif">
 	<br>
 	<h1>Themes, Yo.</h1>
+	<ul class="nav nav-justified">
 	<% @themes.each do |t| %>
-	<%= link_to t.name, t %> 
+	<li id="active"><%= link_to t.name, t %></li>
 	<% end %>
+	</ul>
 	<br>
 	<h2>Rando Quotes From mah Subcriptions</h2>
 	<% @user_themes_array.each do |user_theme| %>

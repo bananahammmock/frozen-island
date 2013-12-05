@@ -21,6 +21,7 @@ class SubscriptionsController < ApplicationController
       			:body => "#{@theme.name}: #{@inspiration.quote}"
     			)
 					flash[:notice] = "You have subscribed to #{@theme.name}"
+					redirect_to root_url
 				else
 					render new
 				end	
