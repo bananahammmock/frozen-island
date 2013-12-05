@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131130071317) do
+ActiveRecord::Schema.define(version: 20131204065837) do
 
   create_table "inspirations", force: true do |t|
     t.text     "quote"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20131130071317) do
     t.datetime "updated_at"
     t.string   "author"
     t.integer  "theme_id"
+    t.string   "themename"
   end
 
   create_table "subscriptions", force: true do |t|
