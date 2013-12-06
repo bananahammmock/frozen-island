@@ -1,6 +1,6 @@
 OmniAuth.config.logger = Rails.logger
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :facebook, AppConfig['356142354529621'], AppConfig['b9f72179a916aa22fab6ea8c615e1221'],
+  provider :facebook, AppConfig['facebook_api_key'], AppConfig['facebook_api_secret'],
   :image_size => 'large', :scope => 'email,user_birthday,read_stream', :display => 'popup'
 end

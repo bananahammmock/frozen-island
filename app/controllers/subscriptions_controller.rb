@@ -1,13 +1,20 @@
 class SubscriptionsController < ApplicationController
-	def new
-		@theme = Theme.find(params[:theme_id])
-		@current_sub = Subscription.where(:user_id => current_user.id, :theme_id => @theme.id)
-		while @current_sub.count == 0 do
+  
+def new
+		# this_theme = Theme.find(params[:theme_id])
+    @theme = Theme.find(params[:theme_id])
+		current_sub = Subscription.where(:user_id => current_user.id, :theme_id => @theme.id)
+
+    # if current_sub != 0
+    #   sub = Subscription.new
+    #   sub.user_id = current_user.id
+    #   sub.theme_id = this_theme.id
+    # end
+		if current_sub.count == 0
 			@subscription = Subscription.new
 			@subscription.user_id = current_user.id
 			@subscription.theme_id = @theme.id
 				if @subscription.save
-					
     			@inspirations = @theme.inspirations
     			@inspiration = @inspirations.first
     			number_to_send_to = current_user.phone_number
@@ -16,15 +23,15 @@ class SubscriptionsController < ApplicationController
     			twilio_phone_number = "7142942970"
     			@twilio_client = Twilio::REST::Client.new twilio_sid, twilio_token
     			@text = @twilio_client.account.messages.create(
-     		 		:from => "+1#{twilio_phone_number}",
-      			:to => number_to_send_to,
-      			:body => "#{@theme.name}: #{@inspiration.quote}"
+     		 		:from => "+1#{twilio_phone_number}", :to => number_to_send_to, :body => "#{@theme.name}: #{@inspiration.quote}"
     			)
-					flash[:notice] = "You have subscribed to #{@theme.name}"
-					redirect_to root_url
+					flash[:info] = "You have subscribed to #{@theme.name}"
+					redirect_to root_path
 				else
 					render new
-				end	
+				end
+      else
+        redirect_to root_path
 		end
 	end
 
@@ -32,7 +39,7 @@ class SubscriptionsController < ApplicationController
 		@theme = Theme.find(params[:theme_id])
 		@subscriptions = Subscription.where(:user_id => current_user.id, :theme_id => @theme.id)
 		@subscriptions.destroy_all
-		flash[:notice] = "You have unsubscribed to #{@theme.name}"
+		flash[:info] = "You have unsubscribed to #{@theme.name}"
 		redirect_to root_path
 	end
 	

@@ -8,19 +8,19 @@
  
 </head>
 <body>
-<div class ="navbar navbar-default navbar-fixed-top" role="navigation">
-<div id="user_nav">
+
+<ul class ="nav nav-justified">
     <% if current_user %>
-      <strong><%= current_user.name %></strong>
+      <li id="active"><strong><%= current_user.name %></strong></li>
       <br>
-      <small><%= link_to "Update Info", "/users/update" %>
+      <li id="active"><small><%= link_to "Update Info", "/users/update" %></li>
       <br>
-      <%= link_to "Sign out", signout_path, id: "sign_out" %></small>
+      <li id="active"><%= link_to "Sign out", signout_path, id: "sign_out" %></small></li>
     <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <li id="active"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
     <% end %>
+  </ul>
   </div>
-</div>
 
 <div class="container">
   <%= yield %>

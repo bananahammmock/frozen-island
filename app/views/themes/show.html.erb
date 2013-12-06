@@ -1,15 +1,21 @@
 <h1>QUOTES, YO.</h1>
 <br>
 <% if flash[:notice] %>
-    <div class="notice"><%= flash[:notice] %></div>
+    <div class='alert alert-info'><%= flash[:notice] %></div>
   	<% end %>
 <br>
 <% if @theme.id == 6 %>
+<h3>
 	<% if @current_subs.count == 0 %>
-		<%= button_to "Subscribe!", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id, data: { confirm: 'Are you sure you want to subscribe?' } )%>
+	<div class="btn-group btn-group-lg">
+		<button type="button" class="btn btn-default">
+		<%= link_to "Subscribe", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id )%>
+		</button>
 	<% else %>
-		<%= button_to "UnSubscribe!", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, data: { confirm: 'Are you sure you want to unsubscribe?' } %>
+		<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete %>
 	<% end %>
+
+</h3>
 	<br>
 	<br>
 	<h2>Added Quotes</h2>
@@ -29,9 +35,13 @@ blargh
 <% else %>
 <h3>
 <% if @current_subs.count == 0 %>
-	<%= button_to "Subscribe!", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id, data: { confirm: 'Are you sure you want to subscribe?' } )%>
+	<div class="btn-group btn-group-lg">
+	<button type="button" class="btn btn-default">
+	<%= link_to "Subscribe", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id )%>
+	</button>
 <% else %>
-	<%= button_to "UnSubscribe!", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, data: { confirm: 'Are you sure you want to unsubscribe?' } %>
+	<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete %>
+	
 <% end %>
 </h3>
 <br>

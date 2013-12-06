@@ -1,2 +1,6 @@
 @import "bootstrap";
 @import "bootstrap/theme";
+
+.nav > li > a {
+  width: 30px !important;
+}
