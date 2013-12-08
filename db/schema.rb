@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131204065837) do
-
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+ActiveRecord::Schema.define(version: 20131208071337) do
 
   create_table "inspirations", force: true do |t|
     t.text     "quote"
@@ -23,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131204065837) do
     t.string   "author"
     t.integer  "theme_id"
     t.string   "themename"
+    t.string   "status"
   end
 
   create_table "subscriptions", force: true do |t|

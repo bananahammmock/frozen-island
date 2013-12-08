@@ -1,0 +1,28 @@
+<%= @insp.quote %>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<ul class="status">
+<li><%= form_for @insp do |u|%>
+  	<%= u.hidden_field :status, value: "active"%>
+  	<%= u.submit "active" %>
+  	<% end %></li>
+<li><%= form_for @insp do |u|%>
+  	<%= u.hidden_field :status, value: "inactive"%>
+  	<%= u.submit "inactive" %>
+  	<% end %></li>
+<li><%= form_for @insp do |u|%>
+  	<%= u.hidden_field :status, value: "whatevs"%>
+  	<%= u.submit "whatevs" %>
+  	<% end %></li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<small><%= link_to "back to main", users_path %></small>

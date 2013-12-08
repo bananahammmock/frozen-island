@@ -1,6 +1,52 @@
 @import "bootstrap";
 @import "bootstrap/theme";
 
-.nav > li > a {
-  width: 30px !important;
+*{margin: 1px; padding: 0;}
+
+body{
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight:900;
+}
+a {
+	text-decoration:none;
+}
+
+a:link {color:black;}
+a:visited {color:black;}
+a:hover {color:gray;}
+a:active {color:white;}
+
+
+
+ul {
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+}
+
+ul.top li {
+	display:inline;
+	text-decoration:none;
+}
+ul.top {
+	text-align:right;
+}
+
+ul.status li {
+display:inline;
+
+}
+form {
+	margin-left: auto;
+  margin-right: auto;
+	display:inline;
+}
+
+
+#themes {
+	text-align:right;
+}
+
+ul.themes li{
+	display:block;
 }

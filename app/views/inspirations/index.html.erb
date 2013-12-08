@@ -1,7 +1,7 @@
 <% @inspirations.each do |i| %>
 <% if i.theme != nil %>
 Theme: <%= i.theme.name %><br>
-<%= i.quote %>
+<%= link_to "#{i.quote}", i %>
 <% else %>
 <%= i.quote %>
 <% end %>

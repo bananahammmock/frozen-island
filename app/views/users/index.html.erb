@@ -2,25 +2,23 @@
 	<% if flash[:info] %>
     <div class='alert alert-info'><%= flash[:info] %></div>
   	<% end %>
-  	<%= "You have #{@user_themes_array.count} subscriptions" %>
-	<br>
-	<img src ="http://25.media.tumblr.com/tumblr_mdk5mgzyDI1qexeroo1_250.gif">
-	<br>
-	<h1>Themes, Yo.</h1>
-	<ul class="nav nav-justified">
+  <div id="quote">
+  "Success is not final, failure is not fatal, it is the courage to continue that counts."
+  </div>
+  <div id="themess">
+	<ul class="themes">
 	<% @themes.each do |t| %>
-	<li id="active"><%= link_to t.name, t %></li>
+	<%= link_to t.name, t %>
 	<% end %>
 	</ul>
+	</div>
 	<br>
-	<h2>Rando Quotes From mah Subcriptions</h2>
+	<!-- <h2>Rando Quotes From mah Subcriptions</h2>
 	<% @user_themes_array.each do |user_theme| %>
 		<small><%= user_theme.name %></small><p>
 		<h3><%= user_theme.inspirations.shuffle.first.quote %></h3>
 		<br>	
-	<% end %>
+	<% end %> -->
 <% else %>
 	<h1>Welcome to FUTW</h1>
-	<br>
-	<img src ="http://25.media.tumblr.com/tumblr_mdk5mgzyDI1qexeroo1_250.gif">
 <% end %>
