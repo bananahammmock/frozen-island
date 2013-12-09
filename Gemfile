@@ -3,7 +3,9 @@ group :development do
   gem 'sqlite3', '1.3.8'
 end
 
-
+group :production do
+	gem 'pg'
+end
 
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem "simple_form"
