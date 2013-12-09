@@ -1,10 +1,11 @@
+<div class="update-info">
 <%= image_tag current_user.image, :class => "profile-pic" %>
 <% if @user_themes_array %>
 <%= "You have #{@user_themes_array.count} subscriptions" %>
 <% end %>
 <% if current_user.phone_number != nil %>
 <div class="form">
-<%= form_for @user do |u|%>
+<%= simple_form_for @user do |u|%>
 	<br>
   	<%= u.label :email, :class => "label" %>
   	<%= u.text_field :email,  :class => "textfield-email" %>
@@ -29,3 +30,4 @@
 <% end %>
 </div>
 <% end %>
+</div>

@@ -1,4 +1,4 @@
-class InspirationsController <ApplicationController
+class InspirationsController < ApplicationController
 	
 	def index
 		@inspirations = Inspiration.all

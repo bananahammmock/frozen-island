@@ -1,15 +1,11 @@
+<div id="quote-status">
 <%= @insp.quote %>
-<br>
-<br>
-<br>
-<br>
-<br>
-
+</div>
 <ul class="status">
 <li><%= form_for @insp do |u|%>
   	<%= u.hidden_field :status, value: "active"%>
   	<%= u.submit "active", :class => "status-button"  %>
-  	<% end %></li>`
+  	<% end %></li>
 <li><%= form_for @insp do |u|%>
   	<%= u.hidden_field :status, value: "inactive" %>
   	<%= u.submit "inactive", :class => "status-button"  %>
@@ -18,11 +14,6 @@
   	<%= u.hidden_field :status, value: "whatevs" %>
   	<%= u.submit "whatevs", :class => "status-button"  %>
   	<% end %></li>
-</ul>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<small><%= link_to "back to main", users_path %></small>
+<div id="back-to-main">
+<%= link_to "back to main", users_path %>
+</div>

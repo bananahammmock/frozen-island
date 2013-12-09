@@ -1,9 +1,5 @@
+<ul class="all-quotes">
 <% @inspirations.each do |i| %>
-<% if i.theme != nil %>
-Theme: <%= i.theme.name %><br>
-<%= link_to "#{i.quote}", i %>
-<% else %>
-<%= i.quote %>
+<li><%= link_to "#{i.quote}", i %></li>
 <% end %>
-<p>
-<% end %>
+</ul>

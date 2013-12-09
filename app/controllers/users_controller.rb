@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 		@user = current_user
 		@user.update(user_params)
 		@user.save!
+		flash[:alert] = "You have updated your information."
 		redirect_to root_url
 	end
 private

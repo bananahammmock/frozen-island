@@ -1,5 +1,4 @@
 class SubscriptionsController < ApplicationController
-  
 def new
 		# this_theme = Theme.find(params[:theme_id])
     @theme = Theme.find(params[:theme_id])
@@ -16,8 +15,8 @@ def new
 			@subscription.theme_id = @theme.id
 				if @subscription.save
     			@inspirations = @theme.inspirations
-    			@inspiration = @inspirations.first
-    			number_to_send_to = current_user.phone_number
+    			@inspiration = @inspirations.sample
+    			number_to_send_to = "+1#{current_user.phone_number}"
    				twilio_sid = "AC4eada82bf78d9b4111871a0148af29a8"
    				twilio_token = "7487cd98f26533f386dbfcfb70570a73"
     			twilio_phone_number = "7142942970"
@@ -25,7 +24,7 @@ def new
     			@text = @twilio_client.account.messages.create(
      		 		:from => "+1#{twilio_phone_number}", :to => number_to_send_to, :body => "#{@theme.name}: #{@inspiration.quote}"
     			)
-					flash[:info] = "You have subscribed to #{@theme.name}"
+					flash[:alert] = "You have subscribed to #{@theme.name}"
 					redirect_to root_path
 				else
 					render new
@@ -39,7 +38,7 @@ def new
 		@theme = Theme.find(params[:theme_id])
 		@subscriptions = Subscription.where(:user_id => current_user.id, :theme_id => @theme.id)
 		@subscriptions.destroy_all
-		flash[:info] = "You have unsubscribed to #{@theme.name}"
+		flash[:alert] = "You have unsubscribed from #{@theme.name}"
 		redirect_to root_path
 	end
 	

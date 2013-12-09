@@ -1,9 +1,4 @@
-<h1>QUOTES, YO.</h1>
-<br>
-<% if flash[:notice] %>
-    <div class='alert alert-info'><%= flash[:notice] %></div>
-  	<% end %>
-<br>
+<!-- <h1 class = "theme-name"><%= "#{@theme.name}" %></h1> -->
 <% if @theme.id == 6 %>
 <h3>
 	<% if @current_subs.count == 0 %>
@@ -35,20 +30,18 @@ blargh
 <% else %>
 <h3>
 <% if @current_subs.count == 0 %>
-	<div class="btn-group btn-group-lg">
-	<button type="button" class="btn btn-default">
-	<%= link_to "Subscribe", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id )%>
-	</button>
+<div class="subscribe">
+	<%= link_to "Subscribe", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id ) %>
+</div>
 <% else %>
-	<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete %>
+	<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, :class => "unsubscribe" %>
 	
 <% end %>
 </h3>
-<br>
-<% @theme.inspirations.each do |i| %>
-	<%= i.quote %>
-	<br>
+<div class="sample-quote">
+<%= @theme.inspirations.sample.quote %>
+</div>
 <% end %>
-<% end %>
-<br>
+<div class="themes-backtomain">
 <%= link_to "Back to Main", root_path %>
+</div>
