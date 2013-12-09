@@ -1,12 +1,15 @@
-@import "bootstrap";
-@import "bootstrap/theme";
 
-*{margin: 1px; padding: 0;}
+
+*{margin: 0; padding: 0;}
 
 body{
 	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight:900;
+	background:url('http://i.imgur.com/4kSIRGa.jpg') no-repeat; height: 100%;
+	background-attachment:fixed;
+	background-position:center;
 }
+
 a {
 	text-decoration:none;
 }
@@ -14,7 +17,7 @@ a {
 a:link {color:black;}
 a:visited {color:black;}
 a:hover {color:gray;}
-a:active {color:white;}
+a:active {color:black;}
 
 
 
@@ -27,26 +30,183 @@ margin: 0px;
 ul.top li {
 	display:inline;
 	text-decoration:none;
+	opacity:.8;
 }
-ul.top {
+
+ul.no-js li {
+	display:block;
+	text-decoration:none;
+	font-size:30px;
+	font-weight:900;
+	margin: 5px 0px;	
+}
+ul.no-js {
+	width:350px;
+	float:left;
+	margin:50px 40px 0px 100px;
+}
+.top {
 	text-align:right;
 }
+
+.top a:link {color:lightgray;}
+.top a:visited {color:lightgray;}
+.top a:hover {color:black;}
+.top a:active {color:white;}
 
 ul.status li {
 display:inline;
+}
+
+#quote {
+	color:lightgray;
+	width:200px;
+	font-size:40px;
+	float:left;
+	margin:0px 0px 0px 20px;
+	font-weight:800px;
+	opacity:.5;
+}
+
+
+.alert-info {
+	width:300px;
+	color:white;
+	font-size:small;
 
 }
-form {
-	margin-left: auto;
-  margin-right: auto;
+
+.hidden {
+	font-size:14px;
+	font-weight:normal;
+	margin: 20px 0px;
+}
+
+.themes-click {
+	height:35px;
+}
+
+.global-nav {
+	width: 450px;
+	height:100%;
+
+}
+.label {
+	color:white;
+	opacity:.6;
+}
+
+.form {
+	margin: 20px 0px 0px 400px;
+	position:relative;
+	float:left;
+}
+.create {
+	background:none;
+	border:none;
+	color:white;
+	padding:20px;
+	cursor:pointer;
+	opacity:.6;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* css3 */
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius:20px;
+	font-size:20px;
+	font-weight:900;
+	margin-left: 50px;
+}
+.create:hover {
+	color:black;
+	opacity:1;
+}
+.status-button {
+	background:none;
+	border:none;
+	color:white;
+	cursor:pointer;
+	opacity:.6;
+	font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+	/* css3 */
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius:20px;
+	font-size:20px;
+	font-weight:900;
+	margin-left: 50px;
+	float:left;
+}
+
+.status-button:hover {
+	color:black;
+	opacity:1;
+}
+.profile-pic {
+	border-radius:20px;
+	opacity:.8;
+	margin: 70px 0px 0px 420px;
+	position:relative;
+	float:left;
+}
+.textfield-email {
+	background:white;
+	opacity:.5;
+	border-radius:20px;
+	border:none;
+	height:12px;
+	padding:4px;
+	width:160px;
+
+}
+.textfield-phone {
+	background:white;
+	opacity:.5;
+	border-radius:20px;
+	border:none;
+	height:12px;
+	padding:4px;
+	width:90px;
+}
+#about-js {
+	position:absolute;
+	right:20px;
+	top:30px;
+	width:100px;
+	float:none;
+	margin:00px 00px 0px 0px;
 	display:inline;
+	text-decoration:none;
+	background:#fff; 
+	/* css3 */
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius:20px;
+	opacity:.5;
+	padding: 0px 0px 0px 10px;
+
+}
+#about-js li{
+	margin:00px 0px 0px 0px;
+	width:100px;
+	font-size:15px;
 }
 
-
-#themes {
-	text-align:right;
+.no-js{
+	padding:50px 15px; 
+	margin:1em 0 3em;
+	border:none; 
+	color:#333;
+	background:#fff; 
+	/* css3 */
+	-webkit-border-radius:20px;
+	-moz-border-radius:20px;
+	border-radius:20px;
+	opacity:.5;
 }
-
-ul.themes li{
-	display:block;
+.hidden a:link {
+	font-weight:bold;
+}
+.hidden a:hover {
+	color:red;
 }

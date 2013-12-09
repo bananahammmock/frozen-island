@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 		@user = current_user
 		@themes = Theme.all
 		@user_themes_array = current_user.themes
+		
 		# @user_quotes = @user_themes.each.inspirations
 		end
 	end

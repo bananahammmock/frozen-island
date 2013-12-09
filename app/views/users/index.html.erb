@@ -2,16 +2,40 @@
 	<% if flash[:info] %>
     <div class='alert alert-info'><%= flash[:info] %></div>
   	<% end %>
+  <%= javascript_include_tag "application" %>
   <div id="quote">
   "Success is not final, failure is not fatal, it is the courage to continue that counts."
   </div>
-  <div id="themess">
-	<ul class="themes">
-	<% @themes.each do |t| %>
-	<%= link_to t.name, t %>
-	<% end %>
+  <nav id="global_nav">
+  <ul class="no-js" id="about-js">
+    <li >
+    <a href="#" onclick="javascript:return false;"><div class="about">About.</div></a>
+
+    <div class="hidden" id="about-hidden">
+    ABOUT HIDDEN SECTION
+    </div>
+    </li>
+  </ul>
+</nav>
+<nav id="global_nav" class="section">
+	<ul class="no-js">
+		<% @themes.each do |t| %>
+		<li >
+
+		<a href="#" onclick="javascript:return false;"><div class="themes-click"><%= "#{t.name}." %></div></a>
+
+		<div class="hidden">
+		<% t.inspirations.each do |i| %>
+		<%= i.quote %>
+		<% end %>
+		<%= link_to "more", t %>
+		</div>
+
+		</li>
+		<% end %>
 	</ul>
-	</div>
+</nav>
+
 	<br>
 	<!-- <h2>Rando Quotes From mah Subcriptions</h2>
 	<% @user_themes_array.each do |user_theme| %>

@@ -11,16 +11,14 @@
 
 <ul class ="top">
     <% if current_user %>
-    <a id="top">
-      <li><small><%= link_to "Update Info", "/users/update" %></li>
-      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></small></li>
+      <li><%= link_to "Update Info", "/users/update" %></li>
+      <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
       <li><%= link_to "admin", inspirations_path %></li>
     <% else %>
       <li><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
-    </a>
-    <% end %>
+    <% end %> 
   </ul>
-  </div>
+  
 
 
   <%= yield %>

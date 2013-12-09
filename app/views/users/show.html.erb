@@ -1,14 +1,31 @@
-<%= image_tag current_user.image %>
+<%= image_tag current_user.image, :class => "profile-pic" %>
 <% if @user_themes_array %>
 <%= "You have #{@user_themes_array.count} subscriptions" %>
 <% end %>
+<% if current_user.phone_number != nil %>
+<div class="form">
 <%= form_for @user do |u|%>
 	<br>
-  	<%= u.label :email %>
-  	<%= u.text_field :email %>
+  	<%= u.label :email, :class => "label" %>
+  	<%= u.text_field :email,  :class => "textfield-email" %>
   	<br>
-	<%= u.label :phone_number %>
- 	 <%= u.text_field :phone_number %>
+	<%= u.label :phone_number, :class => "label"  %>
+ 	 <%= u.text_field :phone_number, :class => "textfield-phone" %>
+  	<br>	
+  	<%= u.submit "Update", :class => "create" %>
+<% end %>
+</div>
+<% else %>
+<div class="form">
+<%= form_for @user do |u|%>
+	<br>
+  	<%= u.label :email, :class => "label" %>
+  	<%= u.text_field :email,  :class => "textfield-email" %>
   	<br>
-  	<%= u.submit "Update" %>
+	<%= u.label :phone_number, :class => "label"  %>
+ 	 <%= u.text_field :phone_number, :value => "+1", :class => "textfield-phone" %>
+  	<br>	
+  	<%= u.submit "Update", :class => "create" %>
+<% end %>
+</div>
 <% end %>

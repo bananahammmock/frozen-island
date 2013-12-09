@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
-
-group :production do
-gem 'pg'
+group :development do
+  gem 'sqlite3', '1.3.8'
 end
 
-gem 'sqlite3'
 
 
 gem 'bootstrap-sass', '>= 3.0.0.0'
