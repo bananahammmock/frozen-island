@@ -5,7 +5,9 @@ end
 
 group :production do
 	gem 'pg'
+	gem 'rails_12factor'
 end
+
 
 gem 'bootstrap-sass', '>= 3.0.0.0'
 gem "simple_form"
