@@ -23,10 +23,10 @@ class InspirationsController < ApplicationController
 		x = @insp.id
 		@y = x+= 1
 		@insp.update(inspiration_params)
-		if params[:commit] == 'hello'
-    elsif params[:commit] == 'bye'
-    elsif params[:commit] == 'whatevs'
-    end
+		# if params[:commit] == 'hello'
+  #   elsif params[:commit] == 'bye'
+  #   elsif params[:commit] == 'whatevs'
+  #   end
     @insp.save
 		
 		redirect_to "/inspirations/#{@y}"
