@@ -2,46 +2,48 @@
 <% if @theme.id == 6 %>
 <h3>
 	<% if @current_subs.count == 0 %>
-	<div class="btn-group btn-group-lg">
-		<button type="button" class="btn btn-default">
+	<div class="subscribe-custom">
 		<%= link_to "Subscribe", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id )%>
-		</button>
+		</div>
 	<% else %>
-		<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete %>
+		<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, :class => "unsubscribe-custom" %>
 	<% end %>
-
 </h3>
-	<br>
-	<br>
+
+	<div class="custom">
 	<h2>Added Quotes</h2>
+	<ul>
 	<% @theme.inspirations.each do |i| %>
-		<%= i.quote %>
-		<br>
+		<li id="all-quotes"><%= link_to "Delete.", i, :method => :delete %> <%= i.quote %></li>
 	<% end %>
+	</ul>
+	<br><br>
 	<h2>All Quotes</h2>
+	<ul>
 		<% @bob.each do |b| %>
-			<%= b.quote %>
-		<small><%= link_to "Add to Custom Subscription", new_inspiration_path(:quote => b.quote) %></small>
-		<br>
+			<li id="all-quotes">
+		<%= link_to "Add.", new_inspiration_path(:quote => b.quote) %> <%= b.quote %></li>
 		<% end %>
-		<br>
-		<br>
-blargh
+	</ul>
+	</div>
+
 <% else %>
-<h3>
 <% if @current_subs.count == 0 %>
+<div class="sample-quote">
+<%= @theme.inspirations.sample.quote %>
+</div>
 <div class="subscribe">
 	<%= link_to "Subscribe", new_subscription_path(:user_id => current_user.id, :theme_id => @theme.id ) %>
 </div>
 <% else %>
-	<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, :class => "unsubscribe" %>
-	
-<% end %>
-</h3>
+
 <div class="sample-quote">
 <%= @theme.inspirations.sample.quote %>
 </div>
+<%= button_to "UnSubscribe", subscription_path(:user_id => current_user.id, :theme_id => @theme.id), :method => :delete, :class => "unsubscribe" %>
 <% end %>
+<% end %>
+
 <div class="themes-backtomain">
 <%= link_to "Back to Main", root_path %>
 </div>
