@@ -27,7 +27,7 @@
 		<a href="#" onclick="javascript:return false;"><div class="themes-click"><%= "#{t.name}." %></div></a>
 
 		<div class="hidden">
-		<% t.inspirations.each do |i| %>
+		<% t.inspirations.sample(10).each do |i| %>
 		<%= i.quote %>
 		<% end %>
 		 <%= link_to "More.", t %>
