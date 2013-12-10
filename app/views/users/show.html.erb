@@ -8,7 +8,7 @@
 <%= simple_form_for @user do |u|%>
 	<br>
   	<%= u.label :email, :class => "label" %>
-  	<%= u.text_field :email, :value => current_user.email :class => "textfield-email" %>
+  	<%= u.text_field :email, :value => "#{current_user.email}", :class => "textfield-email" %>
   	<br>
 	<%= u.label :phone_number, :class => "label"  %>
  	 <%= u.text_field :phone_number, as: :tel, :class => "textfield-phone" %>

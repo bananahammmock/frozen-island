@@ -244,6 +244,10 @@ display:inline;
 }
 .hidden a:link {
 	font-weight:bold;
+	color:#600000;
+}
+.hidden a:visited {
+	color:#600000;
 }
 .hidden a:hover {
 	color:red;
@@ -423,6 +427,7 @@ h2 {
     margin-left:auto;
     margin-right:auto;
     width:960px;
+   
 }
 
 #all quotes {

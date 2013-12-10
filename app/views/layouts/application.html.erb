@@ -11,9 +11,10 @@
 <div id="wrapper">
 <ul class ="top">
     <% if current_user %>
+      <li><%= link_to "Home.", root_url %></li>
       <li><%= link_to "Update.", "/users/update" %></li>
       <li><%= link_to "GTFO.", signout_path, id: "sign_out" %></li>
-      <li><%= link_to "Admin.", inspirations_path %></li>
+      <!-- <li><%= link_to "Admin.", inspirations_path %></li> -->
     <% else %>
       <li id="sign-in"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
     <% end %> 
