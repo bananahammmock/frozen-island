@@ -1,14 +1,18 @@
 class SubscriptionsController < ApplicationController
 def new
+@theme = Theme.find(params[:theme_id])
+	if current_user.phone_number == nil
+			redirect_to "/users/#{current_user.id}"
+			flash[:alert] = "Please input phone number to subscribe"
+	
+	else
+		if @theme.inspirations.each.count == 0
+			redirect_to "/themes/6"
+			flash[:alert] = "Please add quotes to subscribe"
+		else
 		# this_theme = Theme.find(params[:theme_id])
     @theme = Theme.find(params[:theme_id])
 		current_sub = Subscription.where(:user_id => current_user.id, :theme_id => @theme.id)
-
-    # if current_sub != 0
-    #   sub = Subscription.new
-    #   sub.user_id = current_user.id
-    #   sub.theme_id = this_theme.id
-    # end
 		if current_sub.count == 0
 			@subscription = Subscription.new
 			@subscription.user_id = current_user.id
@@ -31,8 +35,10 @@ def new
 				end
       else
         redirect_to root_path
+			end
 		end
-	end
+		end
+end
 
 	def destroy
 		@theme = Theme.find(params[:theme_id])

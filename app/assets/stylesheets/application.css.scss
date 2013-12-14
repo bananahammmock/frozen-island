@@ -100,18 +100,6 @@ display:inline;
 }
 
 
-.alert {
-	color:black;
-	font-size:small;
-	opacity:.6;
-	display:inline-block;
-	border-radius:5px;
-	padding:5px;
-	margin-left:200px;
-	background:red;
-
-}
-
 .hidden {
 	font-size:14px;
 	font-weight:normal;
@@ -204,7 +192,7 @@ display:inline;
 	border:none;
 	height:12px;
 	padding:4px;
-	width:90px;
+	width:95px;
 	font-weight:bold;
 }
 #about-js {
@@ -290,6 +278,7 @@ display:inline;
 	margin:150px auto 50px auto;
 	color:lightgray;
 	opacity:.7;
+
 }
 .themes-backtomain {
 	margin: 0px 0px 0px 3px;
@@ -368,15 +357,16 @@ display:inline;
 	margin:50px auto;
 }
 
-.all-quotes a:link{
-	color:white;
+#all-quotes a:link{
+	color:black;
 	opacity:.7;
 }
-.all-quotes a:visited{
+#all-quotes a:visited{
 	color:white;
 }
-.all-quotes a:hover{
-	color:black;
+#all-quotes a:hover{
+	color:white;
+	background:red;
 }
 #sign-in a:link{
 	font-size:70px;
@@ -423,7 +413,7 @@ h2 {
 }
 .custom a:hover {
 	color:white;
-	background:black;
+	background:lightgreen;
 }
 #wrapper {
     margin-left:auto;
@@ -432,6 +422,43 @@ h2 {
    
 }
 
-#all quotes {
-	color:gray;
+#all-quotes {
+	color:white;
+
 }
+
+.alert-number {
+	color:black;
+	font-size:small;
+	opacity:.6;
+	display:inline-block;
+	border-radius:5px;
+	padding:5px;
+	margin-left:450px;
+	background:red;
+
+}
+
+.alert-add-quotes {
+	color:black;
+	font-size:small;
+	opacity:.6;
+	display:inline-block;
+	border-radius:5px;
+	padding:5px;
+	margin-left:450px;
+	background:red;
+
+}
+
+.alert {
+color: black;
+font-size: small;
+opacity: .6;
+display: inline-block;
+border-radius: 5px;
+padding: 5px;
+margin-left: 200px;
+background: red;
+}
+

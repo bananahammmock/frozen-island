@@ -15,9 +15,14 @@ class UsersController < ApplicationController
 	def update
 		@user = current_user
 		@user.update(user_params)
-		@user.save!
+		@user.phone_number = @user.phone_number.tr(")( -","")
+		if @user.save
 		flash[:alert] = "You have updated your information."
 		redirect_to root_url
+		else
+			redirect_to "/users/#{current_user.id}"
+			flash[:alert] = "That is not a valid number."
+		end
 	end
 private
 	def user_params

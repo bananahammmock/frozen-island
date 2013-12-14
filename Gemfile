@@ -42,11 +42,16 @@ gem 'jbuilder', '~> 1.2'
 
 gem "omniauth-facebook", "1.4.0"
 
+gem 'masked_input-rails', git: 'https://github.com/rafaelmacedo/masked_input-rails.git'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
+gem 'better_errors'
+
+gem 'binding_of_caller'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

@@ -1,5 +1,9 @@
 <!-- <h1 class = "theme-name"><%= "#{@theme.name}" %></h1> -->
 <% if @theme.id == 6 %>
+<% if flash[:alert] %>
+    <div class="alert-add-quotes"><%= flash[:alert] %></div>
+<% end %>
+<br>
 <h3>
 	<% if @current_subs.count == 0 %>
 	<div class="subscribe-custom">
@@ -14,15 +18,14 @@
 	<h2>Added Quotes</h2>
 	<ul>
 	<% @theme.inspirations.each do |i| %>
-		<li id="all-quotes"><%= link_to "Delete.", i, :method => :delete %> <%= i.quote %></li>
+		<li id="all-quotes"><%= link_to "Delete.", i, :method => :delete %><%= i.quote %></li>
 	<% end %>
 	</ul>
 	<br><br>
 	<h2>All Quotes</h2>
 	<ul>
 		<% @bob.each do |b| %>
-			<li id="all-quotes">
-		<%= link_to "Add.", new_inspiration_path(:quote => b.quote) %> <%= b.quote %></li>
+		<li><%= link_to "Add.", new_inspiration_path(:quote => b.quote) %> <%= b.quote %></li>
 		<% end %>
 	</ul>
 	</div>

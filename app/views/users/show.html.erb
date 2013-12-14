@@ -1,3 +1,7 @@
+<% if flash[:alert] %>
+    <div class="alert-number"><%= flash[:alert] %></div>
+<% end %>
+<%= javascript_include_tag "application" %>
 <div class="update-info">
 <%= image_tag current_user.image, :class => "profile-pic" %>
 <% if @user_themes_array %>
@@ -11,20 +15,20 @@
   	<%= u.text_field :email, :value => @current_user.email, :class => "textfield-email" %> -->
   	<br>
 	<%= u.label :phone_number, :class => "label"  %>
- 	 <%= u.text_field :phone_number, as: :tel, :class => "textfield-phone" %>
+ 	 <%= u.text_field :phone_number, value: number_to_phone(current_user.phone_number, area_code: true), :class => "textfield-phone" %>
   	<br>	
   	<%= u.submit "Update", :class => "create" %>
 <% end %>
 </div>
 <% else %>
 <div class="form">
-<%= form_for @user do |u|%>
+<%= simple_form_for @user do |u|%>
 	<!-- <br>
   	<%= u.label :email, :class => "label" %>
   	<%= u.text_field :email, :class => "textfield-email" %> -->
   	<br>
 	<%= u.label :phone_number, :class => "label"  %>
- 	 <%= u.text_field :phone_number, as: :tel, :value => "ie. 3334445555", :class => "textfield-phone" %>
+ 	 <%= u.text_field :phone_number, value: "0008675309" :class => "textfield-phone" %>
   	<br>	
   	<%= u.submit "Update", :class => "create" %>
 <% end %>
