@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
     has_many :subscriptions
     has_many :themes, through: :subscriptions
-    validates :phone_number, format: { with: /\d{3}\d{3}\d{4}/, message: "BE WHACK YO." }
+    validates :phone_number, format: { with: /\d{3}\d{3}\d{4}/, message: "BE WHACK YO." }, :allow_nil => true
 
 def self.from_omniauth(auth)
   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
@@ -14,6 +14,7 @@ def self.from_omniauth(auth)
     user.oauth_expires_at = Time.at(auth.credentials.expires_at)
     user.save!
   end
+
 end
 
 end

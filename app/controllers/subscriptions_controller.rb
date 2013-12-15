@@ -18,6 +18,7 @@ def new
 			@subscription.user_id = current_user.id
 			@subscription.theme_id = @theme.id
 				if @subscription.save
+					begin
     			@inspirations = @theme.inspirations
     			@inspiration = @inspirations.sample
     			number_to_send_to = "+1#{current_user.phone_number}"
@@ -30,8 +31,13 @@ def new
     			)
 					flash[:alert] = "You have subscribed to #{@theme.name}"
 					redirect_to root_path
+					rescue Twilio::REST::RequestError
+						@subscription.destroy
+						redirect_to '/users/update'
+						flash[:alert] = "Please input a valid number."
+					end
 				else
-					render new
+					redirect_to '/users/update'
 				end
       else
         redirect_to root_path

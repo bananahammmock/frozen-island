@@ -20,6 +20,7 @@ class InspirationsController < ApplicationController
 	end
 	def update
 		@insp = Inspiration.find(params[:id])
+		insp_count = Inspiration.all.count + 27
 		x = @insp.id
 		@y = x+= 1
 		@insp.update(inspiration_params)
@@ -28,8 +29,11 @@ class InspirationsController < ApplicationController
   #   elsif params[:commit] == 'whatevs'
   #   end
     @insp.save
-		
-		redirect_to "/inspirations/#{@y}"
+		if @y >= insp_count
+			redirect_to '/inspirations/1'
+		else
+			redirect_to "/inspirations/#{@y}"
+		end
 		
 	end
 	def destroy
