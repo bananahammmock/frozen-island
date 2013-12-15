@@ -18,7 +18,7 @@
 	<h2>Added Quotes</h2>
 	<ul>
 	<% @theme.inspirations.each do |i| %>
-		<li id="all-quotes"><%= link_to "Delete.", i, :method => :delete %><%= i.quote %></li>
+		<li id="all-quotes"><%= link_to "Delete.", i, :method => :delete %> <%= i.quote %></li>
 	<% end %>
 	</ul>
 	<br><br>
