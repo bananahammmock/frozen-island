@@ -2,6 +2,8 @@ class InspirationsController < ApplicationController
 	
 	def index
 		@inspirations = Inspiration.all
+		@quotes_no_customs = Inspiration.where(:theme_id => [1,5])
+		
 	end
 	
 	def new
@@ -14,13 +16,12 @@ class InspirationsController < ApplicationController
 	end
 	def show
 		@insp = Inspiration.find(params[:id])
-		x = @insp.id
-		@y = x+= 1
+	
 		
 	end
 	def update
 		@insp = Inspiration.find(params[:id])
-		insp_count = Inspiration.all.count + 27
+		insp_count = Inspiration.all.count
 		x = @insp.id
 		@y = x+= 1
 		@insp.update(inspiration_params)
