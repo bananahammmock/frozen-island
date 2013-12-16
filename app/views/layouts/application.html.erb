@@ -15,7 +15,7 @@
       <li><%= link_to "Home.", root_url %></li>
       <li><%= link_to "#{current_user.name}.", "/users/update" %></li>
       <li><%= link_to "GTFO.", signout_path, id: "sign_out" %></li>
-      <% if current_user.email == "bananahammock2@gmail.com" or "shaanr@gmail.com" %>
+      <% if current_user.email == "bananahammock2@gmail.com" %>
       <li><%= link_to "Admin.", inspirations_path %></li>
       <% end %>
     <% else %>
