@@ -20,7 +20,7 @@ class InspirationsController < ApplicationController
 	end
 	def update
 		@insp = Inspiration.find(params[:id])
-		@quotes_no_customs = Inspiration.where(:theme_id => [1,5])
+		@quotes_no_customs = Inspiration.where(:theme_id => [1..5])
 		insp_count = @quotes_no_customs.count
 		x = @insp.id
 		@y = x+= 1
