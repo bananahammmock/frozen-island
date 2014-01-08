@@ -1,7 +1,7 @@
 class InspirationsController < ApplicationController
 	
 	def index
-		@quotes_no_customs = Inspiration.where(:theme_id => [1,5])
+		@quotes_no_customs = Inspiration.where(:theme_id => [1..5])
 		
 	end
 	
