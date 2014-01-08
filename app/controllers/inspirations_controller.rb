@@ -29,7 +29,7 @@ class InspirationsController < ApplicationController
   #   elsif params[:commit] == 'bye'
   #   elsif params[:commit] == 'whatevs'
   #   end
-    @insp.save
+    
 		if @y >= insp_count
 			redirect_to '/inspirations/1'
 		else
