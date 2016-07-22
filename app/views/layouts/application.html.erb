@@ -19,7 +19,8 @@
       <li><%= link_to "Admin.", inspirations_path %></li>
       <% end %>
     <% else %>
-      <li id="sign-in"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+      <li id="sign-in"><%# link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %></li>
+      <li id="sign-in"><%= link_to "Sign up with email", new_user_path %></li>
     <% end %> 
   </ul>
   
