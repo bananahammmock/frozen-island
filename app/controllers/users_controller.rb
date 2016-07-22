@@ -1,4 +1,21 @@
 class UsersController < ApplicationController
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to root_url
+    else
+      flash[:alert] = @user.errors.messages
+      render :new
+    end
+  end
+
 	def index
 		if current_user
 		@user = current_user
@@ -25,7 +42,8 @@ class UsersController < ApplicationController
 		end
 	end
 private
+
 	def user_params
-		params.require(:user).permit(:email, :phone_number)	if params[:user]	
+		params.require(:user).permit(:email, :phone_number, :name)
 	end
 end
